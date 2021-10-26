@@ -7,7 +7,7 @@ public class Principal {
 		int limite=26;
 	
 		for(int i=0;i<limite;i++) {
-			System.out.println(i+1+"º Hola Mundo");
+			System.out.println(i+1+"º Hola muy wenos dias Mundo");
 		}
 
 	}
