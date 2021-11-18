@@ -23,19 +23,19 @@ public class Principal {
 				break;
 			case 1:
 				System.out.println("Bienvenido a la ruleta");
-				System.out.println("Ha slido el número: "+r1.randomRuleta(0));
+				System.out.println("Ha slido el número: "+r1.randomRuleta(0,0));
 				break;
 			case 2:
 				System.out.println("Bienvenido a pares y nones");
-				if(r1.randomPareNone(0)%2==0) {
+				if(r1.randomPareNone(0,0)%2==0) {
 					System.out.println("Ha salido pares ");
 				}else {
 					System.out.println("Ha salido none");
 				}
 				break;				
 			case 3:
-				System.out.println("bienvenido al sorteo de la primitiva");
-				System.out.println("Ha slido el número: "+r1.randomPrimitiva(0));
+				System.out.println("Bienvenido al sorteo de la primitiva");
+				System.out.println("Ha slido el número: "+r1.randomPrimitiva(0,0));
 				break;
 			}
 		}while(menu!=0);
