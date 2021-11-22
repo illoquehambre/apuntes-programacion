@@ -7,35 +7,30 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CaraCruz j1;
-		int auxiliar=0;
-		boolean player, result=true;
+		int player=0;
 //opción elegida por el jugador true=cara, false=cruz
 		
 		do {
-			System.out.println("Introduzca 1 para cara o 2 para cruz");
-			auxiliar=Leer.datoInt();
-			switch (auxiliar){
+			System.out.println("\n\nIntroduzca 1 para cara o 2 para cruz");
+			player=Leer.datoInt();
+			switch (player){
 			case 0:
 				break;
 			case 1:
-				player=true;
-				j1= new CaraCruz(player, result);
-				j1.setResult(j1.lanzarMoneda());
+				j1= new CaraCruz(player);
 				System.out.println("Ha elegido cara");
-				System.out.println(j1.mostrarGanador());
+				j1.mostrarGanador();
 				break;
 			case 2:
-				player=false;
-				j1= new CaraCruz(player, result);
-				j1.setResult(j1.lanzarMoneda());
+				j1= new CaraCruz(player);
 				System.out.println("Ha elegido cruz");
-				System.out.println(j1.mostrarGanador());
+				j1.mostrarGanador();
 				break;
 			default:
-				System.out.println("mete 1 o 2 coño");
+				System.out.println("ERROR. Intentelo de nuevo.");
 				break;		
 			}
-		}while(auxiliar!=0);
+		}while(player!=0);
 		
 	}
 
