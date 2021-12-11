@@ -1,0 +1,16 @@
+package debug_01;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [][]a = new int[10][4];    
+		for(int i = 0; i < a.length; i++) {
+	        for(int j = 0; j <  a.length; j++){
+	           System.out.printf("%2d ", a[i][j]);
+	        }
+	        System.out.println();
+		}
+  }
+}
+
