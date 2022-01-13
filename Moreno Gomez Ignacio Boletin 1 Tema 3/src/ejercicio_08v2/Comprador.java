@@ -52,5 +52,22 @@ public class Comprador {
 		
 	
 	}
-	
+	public int comprobarResultado(Sorteo sorteo) {
+		int contador=0;
+		sorteo.generarBoletoGanador(sorteo);
+		for(int i=0;i<boletoComprado.length;i++){
+			if(sorteo.getBoletoGanador()[i]==boletoComprado[i]) {
+				contador++;
+			}
+			
+		}
+		return contador;
+	}
+	public int recibirPremio(Sorteo sorteo) {
+		int contador=0;
+		sorteo.generarPremios(sorteo);
+		contador=comprobarResultado(sorteo);
+		return sorteo.getPremio()[contador];
+	}
+
 }
