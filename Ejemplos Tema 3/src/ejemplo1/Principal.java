@@ -10,8 +10,8 @@ public class Principal {
 		String nombre, apellidos;
 		double notaMedia, puntos;
 		Alumno a1, a2, a3;//Se declara la variable donde se guardaran los datos del alumno 1 con los atributos de la clase Alumno
-		a1=new Alumno(45, "Maria", "García Marshal", 8.24);//La variable queda instanciada. Estas dos lineas se pueden hacer en un a sola)
-		//si no doy valores dentro del paréntesis, eclipse le mete un valor por defecto(ints 0, strings null, double 0.0 ...)
+		a1=new Alumno(45, "Maria", "Garcï¿½a Marshal", 8.24);//La variable queda instanciada. Estas dos lineas se pueden hacer en un a sola)
+		//si no doy valores dentro del parï¿½ntesis, eclipse le mete un valor por defecto(ints 0, strings null, double 0.0 ...)
 		//para darle valores a la variable se utiliza un CONSTRUCTOR
 		//Un constructor se crea en la clase que define al objeto
 		System.out.println(a1.getEdad()+"\n" +a1.getNombre()+"\n"+ a1.getApellidos()+"\n"+ a1.getNotaMedia());
@@ -46,7 +46,7 @@ public class Principal {
 		System.out.println(a2.getEdad()+"\n" +a2.getNombre()+"\n"+ a2.getApellidos()+"\n"+ a2.getNotaMedia());
 		System.out.println("Cuantos puntos desea sumarle?");
 		puntos=Leer.datoDouble();
-		a2.añadirPuntos(puntos);//devuelve lo que he puesto en el método añadirPuntos
+		a2.aÃ±adirPuntos(puntos);//devuelve lo que he puesto en el mï¿½todo aï¿½adirPuntos
 		System.out.println("Nueva nota media: "+a2.getNotaMedia());
 		
 		/*
