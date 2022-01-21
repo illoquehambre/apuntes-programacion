@@ -10,7 +10,7 @@ public class Alumno {
 	//Constructor
 	public Alumno (int edad, String nombre, String apellidos, double notaMedia) {
 		//Esto es el constructor de un alumno
-		this.edad=edad;//this.nombreAtributo = nombreVariable (en este caso se llaman igual, pero no tendría por que ser así
+		this.edad=edad;//this.nombreAtributo = nombreVariable (en este caso se llaman igual, pero no tendrï¿½a por que ser asï¿½
 		this.apellidos=apellidos;
 		this.nombre=nombre;
 		this.notaMedia=notaMedia;
@@ -23,16 +23,16 @@ public class Alumno {
 	//getter
 	//1. acceso:public
 	//2.tipo de lo que devuelve (int, double, String...)
-	//3. método (getEdad)
-	public int getEdad () {//no hay que darle nada en los paréntesis para que de un valor, solo da no requiere datos introducido
+	//3. mï¿½todo (getEdad)
+	public int getEdad () {//no hay que darle nada en los parï¿½ntesis para que de un valor, solo da no requiere datos introducido
 		return edad;//devuelve la edad
 		
 	}
 	//setter
 	//el constructor crea el objeto mientras que el setter sirve para modificarlo
 	//no devuelven nada, es por esto que ponemos "void"
-	//void indica que no devuelve ningún dato de ningun tipo
-	public void setEdad (int edad) {//se le debe dar un valor en los paréntesis para oder introducir un valor
+	//void indica que no devuelve ningï¿½n dato de ningun tipo
+	public void setEdad (int edad) {//se le debe dar un valor en los parï¿½ntesis para oder introducir un valor
 		this.edad=edad;//lo mismo que se ponia en los constructores
 	}
 	public String getNombre () {
@@ -54,8 +54,8 @@ public class Alumno {
 		this.notaMedia=notaMedia;
 	}
 	
-	//primer método
-	public double añadirPuntos(double puntos) {//se está declarando la variable puntos
+	//primer mï¿½todo
+	public double aÃ±adirPuntos(double puntos) {//se estï¿½ declarando la variable puntos
 		
 		notaMedia=notaMedia+puntos;
 		return notaMedia;

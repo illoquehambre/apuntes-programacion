@@ -18,10 +18,15 @@ public class Ticket {
 		this.precioUd = precioUd;
 	}
 	
-	//métodos
-	public void imprimirTicket() {
+	//metodos
+	public void imprimirTicket(int n) {
+		System.out.println("*****************");
 		System.out.println("\t\tTICKET");
-		System.out.println("Valido para");
+		System.out.println("*****************");
+		System.out.println("Valido para "+n+" viajes");
+		System.out.println("*****************");
 	}
-	
+	public void error() {
+		System.out.println("Error. IntÃ©ntelo de nuevo.");
+	}
 }
