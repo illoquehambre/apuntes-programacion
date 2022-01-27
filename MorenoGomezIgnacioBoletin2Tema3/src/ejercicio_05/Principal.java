@@ -36,7 +36,7 @@ public class Principal {
 				precioBase=Leer.datoDouble();
 				System.out.println("Introduzca el consumo en una letra mayuscula entre A y F");
 				consumo=Leer.datoChar();
-				System.out.println("Introduzca el color que desee, en caso de que no estÃ© disponible se le asignarÃ¡ uno por defecto");
+				System.out.println("Introduzca el color que desee, en caso de que no esté disponible se le asignará uno por defecto");
 				color=Leer.dato();
 				tienda.getLista()[id]=new Electrodomestico(precioBase,color,consumo,peso);
 				tienda.getLista()[id].comprobarColor();
@@ -72,6 +72,8 @@ public class Principal {
 				opcion=Leer.datoInt();
 				System.out.println("La media del precio de todos los productos es: "+tienda.calcularMedia()+"â‚¬");
 				break;
+			default:
+				System.out.println("Opción no disponible, por favor intentelo de nuevo;");
 			}
 		}while(opcion!=0);
 		

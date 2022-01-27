@@ -51,4 +51,5 @@ public class Sala {
 		dineroRecaudado=dineroRecaudado+asientos[butaca][fila].getPrecio();
 		asientos[butaca][fila].setdisponible(false);
 	}
+
 }
