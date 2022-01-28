@@ -58,7 +58,7 @@ public class GestionPlataforma {
 		Random random=new Random(System.nanoTime());
 		litrosPorDia=new int[7];
 		for(int i=0;i<litrosPorDia.length;i++) {
-			getLitrosPorDia()[i]=random.nextInt(hasta-desde+1)-desde;
+			litrosPorDia[i]=random.nextInt(hasta-desde+1)-desde;
 			
 		}
 		return litrosPorDia;
