@@ -9,11 +9,26 @@ public class Rectangulo extends Figura {
 		this.altura = altura;
 		this.base = base;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Rectangulo [altura=" + altura + ", base=" + base + ", toString()=" + super.toString() + "]";
+	}
+
+
 
 	@Override
 	public double calcularArea() {
 		// TODO Auto-generated method stub
 		return base*altura;
+	}
+
+	@Override
+	public double calcularPerimetro() {
+		// TODO Auto-generated method stub
+		return 2*base+2*altura;
 	}
 	
 }

@@ -9,7 +9,19 @@ public abstract class Figura {
 		this.y = y;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Figura [x=" + x + ", y=" + y + "]";
+	}
+
+
 	public abstract double calcularArea();
+	public abstract double calcularPerimetro();
+	
+	public void metodoSoloDeFigura() {
+		System.out.println("Este método solo estará en Figura");
+	}
 
 }
 
