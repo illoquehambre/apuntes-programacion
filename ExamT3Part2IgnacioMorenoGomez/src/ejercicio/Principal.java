@@ -1,3 +1,6 @@
+//Cuando haya que buscar por id del piso, mostrar previamente una lista de los mismos con sus caracteristicas
+
+
 package ejercicio;
 
 import utilidades.Leer;
@@ -6,7 +9,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int tam=10, opcion=0, id=0, pisosCreados=0, opcion1=0;
+		int tam=10/*Pedir el tamaño por teclado al iniciar el programa */, opcion=0, id=0, pisosCreados=0, opcion1=0;
 		double precioBase=0, metrosCuadrados=0, descuento=25, valorCambio=1.13, interesesInmo=7.5;
 		String direccion;
 		boolean reformable;
@@ -40,11 +43,12 @@ public class Principal {
 					metrosCuadrados=Leer.datoDouble();
 					System.out.println("Introduzca el número 0 si el piso necesita reformas o cualquier otro número si no es así.");
 					opcion1=Leer.datoInt();
-					if(opcion1==0) {
+					if(opcion1==0) {//Hacer un método para este tipo de operaciones
 						reformable=true;
 					}else {
 						reformable=false;
 					}
+					//En vez de llamr a todos los atributos en el método, instanciar un objetos(piso)auxiliar y 
 					inmo.agregarNuevoPiso(direccion, reformable, precioBase, metrosCuadrados, pisosCreados);
 					pisosCreados++;
 				}else {

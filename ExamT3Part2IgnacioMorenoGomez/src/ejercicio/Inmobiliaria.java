@@ -24,7 +24,7 @@ public class Inmobiliaria {
 		Inmobiliaria.maxDineroRecaudable = maxDineroRecaudable;
 	}
 	//metodos
-	public void agregarNuevoPiso(String direccion, boolean reformable, double precio, double metrosCuadrados, int contador ) {
+	public void agregarNuevoPiso(String direccion, boolean reformable, double precio, double metrosCuadrados, int contador ) {//Pasar un piso completo, no atributos sueltos del mismo
 		lista[contador]=new Piso(direccion, precio, metrosCuadrados, reformable);
 		maxDineroRecaudable=maxDineroRecaudable+precio;
 	}

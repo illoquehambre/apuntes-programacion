@@ -6,7 +6,7 @@ public class VehiculoMotor {
 	private double Potencia;
 	private int cilindrada;
 	private String tipoCombustible;
-	private static double impuestosBase;
+	private static double impuestosBase;//MAL: Los impuestos no son atributo de ningun vehiculo.
 	public VehiculoMotor(double potencia, int cilindrada, String tipoCombustible, int idTipo) {
 		super();
 		Potencia = potencia;
@@ -60,7 +60,7 @@ public class VehiculoMotor {
 	
 	//metodos
 	public double calcularImpuestos(){
-		return impuestosBase;
+		return impuestosBase;//Los impuesto no deben ser un atributo sino  valores dentro de un metodo
 	}
 	
 }

@@ -2,7 +2,7 @@ package ejercicio_03;
 
 public class Coche extends VehiculoMotor{
 	
-	private static double porcentajeImpuestosCilindrada;
+	private static double porcentajeImpuestosCilindrada;//MAL: no es un atributo, se le pasa por el metodo
 
 	public Coche(double potencia, int cilindrada, String tipoCombustible, int idTipo) {
 		super(potencia, cilindrada, tipoCombustible, idTipo);
