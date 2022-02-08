@@ -18,10 +18,6 @@ package documentacion;
 
 public class Dc1 {
 	
-	
-	public double sumar(double a, double b)throws ArithmeticException {
-			return a/b;
-	}
 	/**
 	 * Metodo que sirve para calcular division
 	 * 
@@ -30,5 +26,9 @@ public class Dc1 {
 	 * @return Resultado de la division
 	 * @throws ArithmetivException En caso de tratar de dividir entre
 	 */
+	public double sumar(double a, double b)throws ArithmeticException {
+			return a/b;
+	}
+	
 	
 }
