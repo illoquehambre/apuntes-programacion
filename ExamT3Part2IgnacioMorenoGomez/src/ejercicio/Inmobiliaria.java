@@ -2,6 +2,15 @@ package ejercicio;
 
 public class Inmobiliaria {
 	
+	/**
+	 * @author moreno.goign22
+	 * Clase Inmobiliaria que gestiona sus distintos pisos
+	 * guardados en un atributo 'lista' array de pisos
+	 *  y los métodos que se realizan con estos
+	 *  @param maxDineroRecaudable Indica la cnatida de dinero recaudable si se vendiesen todos los pisos en ese momento en la lista
+	 */
+	
+	
 	private Piso lista[];
 	private static double maxDineroRecaudable;
 	
@@ -23,12 +32,31 @@ public class Inmobiliaria {
 	public static void setMaxDineroRecaudable(double maxDineroRecaudable) {
 		Inmobiliaria.maxDineroRecaudable = maxDineroRecaudable;
 	}
+	
 	//metodos
+	/**
+	 * Este método se encargará de generar un nuevo piso con los atributos indicado
+	 * y añadirlo al array 'lista' que es atributo de la clase 'inmobiliaria'
+	 * Atributos de cada uno de los pisos que se añaden al atributo de la clase inmobiliaria, array de pisos.
+	 * @param direccion dirección del piso
+	 * @param reformable indicador de si el piso está disponible para reforma
+	 * @param precio precio base del piso
+	 * @param metrosCuadrados superficie del piso en metros cuadrados
+	 * @param contador indicará el número de pisos guardados en el array, y servirá para saber en que posición guardar el próximo
+	 * Tras añadir el piso a la lista, se guardará en una variable estática, el dinero recaudable
+	 *  si se vendiesen todos los pisos de la lista
+	 */
 	public void agregarNuevoPiso(String direccion, boolean reformable, double precio, double metrosCuadrados, int contador ) {//Pasar un piso completo, no atributos sueltos del mismo
 		lista[contador]=new Piso(direccion, precio, metrosCuadrados, reformable);
 		maxDineroRecaudable=maxDineroRecaudable+precio;
 	}
-	
+	/**
+	 * Este método se encargará de calcular y devolver el precio con descuento de un piso concreto
+	 * Se le pasará un número identificativo 'id' y el descuento a aplicar
+	 * @param id número entero identificador
+	 * @param porcentajeDescuento Desscuento aplicable al producto
+	 * @return precio con descunto ya aplicado de un piso concreto 
+	 */
 	public double calcularPrecioDescuento(int id, double porcentajeDescuento) {
 		int tantoPorCiento=100;
 		return lista[id].getPrecioBase()-(lista[id].getPrecioBase()*(porcentajeDescuento/tantoPorCiento));
