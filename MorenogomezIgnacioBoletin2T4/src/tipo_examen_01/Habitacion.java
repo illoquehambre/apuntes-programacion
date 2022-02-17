@@ -53,7 +53,7 @@ public class Habitacion {
 				+ nDias + ", nOcupantes=" + nOcupantes + "]";
 	}
 	
-	public double calcularPrecioFinal() {
+	public double calcularPrecioFinal(double p, double p2) {
 		return precioBase*nDias;
 	}
 	

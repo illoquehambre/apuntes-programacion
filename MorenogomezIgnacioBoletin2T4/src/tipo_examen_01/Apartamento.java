@@ -18,28 +18,27 @@ public class Apartamento extends Habitacion implements ServicioLimpieza{
 		this.servicioLimpieza = servicioLimpieza;
 	}
 
+
+	
+
 	@Override
 	public String toString() {
-		return "Apartamento [servicioLimpieza=" + servicioLimpieza + ", getPrecioBase()=" + getPrecioBase()
-				+ ", getCliente()=" + getCliente() + ", isOcupacion()=" + isOcupacion() + ", getnDias()=" + getnDias()
-				+ ", getnOcupantes()=" + getnOcupantes() + ", toString()=" + super.toString()
-				+ ", calcularPrecioFinal()=" + calcularPrecioFinal() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + "]";
+		return "Apartamento [servicioLimpieza=" + servicioLimpieza + "]"+super.toString();
 	}
 
 	@Override
 	public double calcularServicioLimpieza(double precio) {
 		// TODO Apéndice de método generado automáticamente
 		if(servicioLimpieza) {
-			return  precio;
+			return  precio*getnDias();
 		}else {
 			return 0; 
 		}
 		
 	}
 	
-	public double calcularPrecioFinal(double precio) {
-		return super.calcularPrecioFinal()+this.calcularServicioLimpieza(precio)
+	public double calcularPrecioFinal(double precio, double descuento) {
+		return super.calcularPrecioFinal(precio, descuento)+this.calcularServicioLimpieza(precio);
 	}
 	
 

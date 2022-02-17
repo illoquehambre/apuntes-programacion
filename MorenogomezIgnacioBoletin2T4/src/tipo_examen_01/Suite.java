@@ -1,6 +1,6 @@
 package tipo_examen_01;
 
-public class Suite extends Habitacion implements DescuentoRealizable{
+public class Suite extends Habitacion implements DescuentoRealizable, IRegalable{
 
 		private double metrosCuadrados;
 		private double serviciosExtra;
@@ -34,28 +34,38 @@ public class Suite extends Habitacion implements DescuentoRealizable{
 		}
 
 
+	
+		
+		
+		
 		@Override
 		public String toString() {
-			return "Suite [metrosCuadrados=" + metrosCuadrados + ", serviciosExtra=" + serviciosExtra
-					+ ", getPrecioBase()=" + getPrecioBase() + ", getCliente()=" + getCliente() + ", isOcupacion()="
-					+ isOcupacion() + ", getnDias()=" + getnDias() + ", getnOcupantes()=" + getnOcupantes()
-					+ ", toString()=" + super.toString() + ", calcularPrecioFinal()=" + calcularPrecioFinal()
-					+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
-		}
-		
-		
-		@Override
-		public double calcularDescuento(double descuento) {
-			// TODO Apéndice de método generado automáticamente
-			int divisor=100;
-			return (super.calcularPrecioFinal()/100)*20;
-		}
-		
-		
-		public double calcularPrecioFinal(double descuento) {
-			 return super.calcularPrecioFinal()+serviciosExtra-this.calcularDescuento(descuento);
+			return "Suite [metrosCuadrados=" + metrosCuadrados + ", serviciosExtra=" + serviciosExtra + "]"+super.toString();
 		}
 
+
+		@Override
+		public double calcularDescuento(double precio, double descuento) {
+			// TODO Apéndice de método generado automáticamente
+			int divisor=100;
+			return (super.calcularPrecioFinal(precio, descuento)/divisor)*descuento;
+		}
+		
+		
+		public double calcularPrecioFinal(double precio, double descuento) {
+			 return super.calcularPrecioFinal(precio, descuento)+serviciosExtra-this.calcularDescuento(precio, descuento);
+		}
+
+
+		@Override
+		public void mostrarRegalo(double precioExtra) {
+			// TODO Auto-generated method stub
+			serviciosExtra=serviciosExtra+precioExtra;
+			
+		}
+
+
+	
 
 	
 }
