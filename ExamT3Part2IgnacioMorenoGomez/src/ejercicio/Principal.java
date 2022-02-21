@@ -49,7 +49,8 @@ public class Principal {
 						reformable=false;
 					}
 					//En vez de llamr a todos los atributos en el método, instanciar un objetos(piso)auxiliar y 
-					inmo.agregarNuevoPiso(direccion, reformable, precioBase, metrosCuadrados, pisosCreados);
+					Piso aux=new Piso(direccion, precioBase , metrosCuadrados, reformable);
+					inmo.agregarNuevoPiso(aux, pisosCreados);
 					pisosCreados++;
 				}else {
 					System.out.println("Lo siento, no hay hueco para guardar más pisos");

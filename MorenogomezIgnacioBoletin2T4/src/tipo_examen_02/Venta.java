@@ -39,6 +39,14 @@ public class Venta {
 	public void restarUno(int posicion) {
 		lista[posicion].setnUnidades(lista[posicion].getnUnidades()-1);
 	}
+	
+	public void comprobarinstancia(int posicion) {
+		if(lista[posicion] instanceof EspadaLaser) {
+			((EspadaLaser)lista[posicion]).cuidaito();
+		}
+		
+	}
+	
 	public double devolverCambio(double porcGanan, double dineroEntregado, int posicion, double cantFij){
 		
 		if(dineroEntregado>=lista[posicion].calculaPVP(porcGanan, cantFij)) {

@@ -46,9 +46,9 @@ public class Inmobiliaria {
 	 * Tras añadir el piso a la lista, se guardará en una variable estática, el dinero recaudable
 	 *  si se vendiesen todos los pisos de la lista
 	 */
-	public void agregarNuevoPiso(String direccion, boolean reformable, double precio, double metrosCuadrados, int contador ) {//Pasar un piso completo, no atributos sueltos del mismo
-		lista[contador]=new Piso(direccion, precio, metrosCuadrados, reformable);
-		maxDineroRecaudable=maxDineroRecaudable+precio;
+	public void agregarNuevoPiso(Piso aux, int contador ) {//Pasar un piso completo, no atributos sueltos del mismo
+		lista[contador]=aux;
+		maxDineroRecaudable=maxDineroRecaudable+lista[contador].getPrecioBase();
 	}
 	/**
 	 * Este método se encargará de calcular y devolver el precio con descuento de un piso concreto

@@ -44,13 +44,18 @@ public class EspadaLaser extends Producto{
 		int divisor=100;
 		String doble= "doble";
 		// TODO Apéndice de método generado automáticamente
+		this.cuidaito();
 		if(tipo.equalsIgnoreCase(doble)) {
 			return getPrecioBase()*porcGanan/divisor+cantFij;
 		}else {
 			return getPrecioBase()*porcGanan/divisor;
 		}
 		
+		
 	}
 	
+	public void cuidaito() {
+		System.out.println("Cuidaito que hase pupa");
+	}
 	
 }
