@@ -41,13 +41,18 @@ public class gestionClub {
 		lista.add(socio);
 	}
 	
-	public void borrarSocio(Socio socio) {
-		lista.remove(socio);
+	public void borrarSocio(int id) {
+		lista.remove(id);
 	}
 	
-	public void cambiarNombre(Socio socio, String nombre) {
-		socio.setNombre(nombre);
+	public void cambiarNombre(int id, String nombre) {
+		lista.get(id).setNombre(nombre);
 	}
 	
+	public void mostrarTodo() {
+		for (Socio print : lista) {
+			System.out.println(print);
+		}
+	}
 	
 }
