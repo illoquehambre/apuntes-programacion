@@ -1,5 +1,6 @@
 package ejercicio_04;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
@@ -43,5 +44,28 @@ public class Agenda {
 	}
 	
 	
+	public void agregarContactoCambiarTlf(Contacto contacto, String telefono) {
+		lista.put(contacto, telefono);
+	}
+	public void borrarContacto(Contacto contacto, String telefono) {
+		lista.remove(contacto, telefono);
+	}
+	public void mostrarTodo() {
+		
+	}
+	
+	public Contacto buscarPorNombre(String nuevoNombre) {
+		Iterator <Contacto> it = lista.keySet().iterator();
+		Contacto tmp =null;
+		boolean encontrado=false;
+		while(it.hasNext() && !encontrado) {
+			tmp= it.next();
+			if(tmp.getNombre().equalsIgnoreCase(nuevoNombre)) {
+				encontrado=true;
+				return tmp;
+			}
+		}
+		return null;
+	}
 	
 }
