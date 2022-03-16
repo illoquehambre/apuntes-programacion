@@ -2,7 +2,7 @@ package ejercicio_05;
 
 import java.util.Objects;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{//Comparable va en la pojo porque es el orden natural
 	
 	private String nombre;
 	private String direccion;
@@ -50,6 +50,11 @@ public class Persona {
 		Persona other = (Persona) obj;
 		return Objects.equals(direccion, other.direccion) && Objects.equals(nombre, other.nombre)
 				&& Objects.equals(telefono, other.telefono);
+	}
+	@Override
+	public int compareTo(Persona o) {
+		// TODO Auto-generated method stub
+		return telefono.compareToIgnoreCase(o.telefono);
 	}
 	
 	
