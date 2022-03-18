@@ -2,7 +2,7 @@ package ejercicio_06;
 
 import java.util.Objects;
 
-public class Trabajador {
+public class Trabajador implements Comparable<Trabajador>{
 	public String nombre;
 	public String dni;
 	public int horasTrabajadas;
@@ -60,6 +60,19 @@ public class Trabajador {
 				&& Objects.equals(nombre, other.nombre)
 				&& Double.doubleToLongBits(sueldoFinal) == Double.doubleToLongBits(other.sueldoFinal);
 	}
+	@Override
+	public int compareTo(Trabajador o) {
+		// TODO Auto-generated method stub
+		if(o.horasTrabajadas<this.horasTrabajadas) {
+			return 1;
+		}else if(o.horasTrabajadas>this.horasTrabajadas){
+			return -1;
+		}else {
+			return 0;
+		}
+	}
+	
+	
 	
 	
 }
