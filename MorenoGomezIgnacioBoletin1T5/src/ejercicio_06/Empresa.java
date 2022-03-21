@@ -27,5 +27,10 @@ public class Empresa {
 		return "Empresa [lista=" + lista + "]";
 	}
 	
+	public void mostrarTodo() {
+		for (Trabajador tr : lista) {
+			System.out.println(tr);
+		}
+	}
 	
 }
