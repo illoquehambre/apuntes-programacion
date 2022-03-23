@@ -1,6 +1,8 @@
 package ejercicio_04;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -54,18 +56,17 @@ public class Agenda {
 		
 	}
 	
-	public Contacto buscarPorNombre(String nuevoNombre) {
+	public List <Contacto> buscarPorNombre(String nuevoNombre) {
 		Iterator <Contacto> it = lista.keySet().iterator();
 		Contacto tmp =null;
-		boolean encontrado=false;
-		while(it.hasNext() && !encontrado) {
+		List <Contacto> lista=new ArrayList<Contacto>();
+		while(it.hasNext()) {
 			tmp= it.next();
 			if(tmp.getNombre().equalsIgnoreCase(nuevoNombre)) {
-				encontrado=true;
-				return tmp;
+				lista.add(tmp);
 			}
 		}
-		return null;
+		return lista;
 	}
 	
 }
