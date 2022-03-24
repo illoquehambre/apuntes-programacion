@@ -1,12 +1,14 @@
 package proyecto;
 
-public class Mensaje {
+public class Seccion {
 	
 	private String texto;
+	private String nombre;
 
-	public Mensaje(String texto) {
+	public Seccion(String texto, String nombre) {
 		super();
 		this.texto = texto;
+		this.setNombre(nombre);
 	}
 
 	public String getTexto() {
@@ -21,27 +23,22 @@ public class Mensaje {
 	public String toString() {
 		return "Mensaje [texto=" + texto + "]";
 	}
+	public void buscarrPorNombre() {
+		
+	}
 	
 	public void mostrarMensajeActual() {
 		System.out.println(texto);
 	}
-	
-	public void convertirMayusculas() {
-		
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void convertirMinusculas() {
-		
-	}
-	
-	public void convertirPrimeraLetraMayuscula() {
-		
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
-	public void cambiarCadenaDeCaracteres() {
-		
-	}
-	public void eliminarCadenaDeCaracteres() {
-		
-	}
+	
 	
 }
