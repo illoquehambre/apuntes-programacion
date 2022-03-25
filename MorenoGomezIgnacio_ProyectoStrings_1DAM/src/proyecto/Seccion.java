@@ -19,18 +19,6 @@ public class Seccion {
 		this.texto = texto;
 	}
 
-	@Override
-	public String toString() {
-		return "Mensaje [texto=" + texto + "]";
-	}
-	public void buscarrPorNombre() {
-		
-	}
-	
-	public void mostrarMensajeActual() {
-		System.out.println(texto);
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
@@ -38,7 +26,14 @@ public class Seccion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	@Override
+	public String toString() {
+		return "Mensaje [texto=" + texto + "]";
+	}
 	
+	public void mostrarMensajeActual() {
+		System.out.println(texto);
+	}
 	
 	
 }

@@ -2,6 +2,7 @@ package proyecto;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringJoiner;
 
 
 public class Hoja {
@@ -40,8 +41,8 @@ public class Hoja {
 	return null;
 	}
 	
-	public void convertirPrimeraLetraMayuscula(String nuevoNombre) {
-		char[] array=this.buscarPorNombre(nuevoNombre).getTexto().toCharArray();
+	public void convertirPrimeraLetraMayuscula(Seccion actual) {
+		char[] array=actual.getTexto().toCharArray();
 		for (int i = 0; i < array.length; i++) {
 			if(i==0 || array[i-1]==' ') {
 			array[i]= Character.toUpperCase(array[i]);
@@ -51,27 +52,61 @@ public class Hoja {
 		}
 	}
 	
-	public void sustituirCadenaDeCaracteres(String nuevoNombre, String nuevoTexto, String antiguoTexto) {
-		this.buscarPorNombre(nuevoNombre).getTexto().replaceAll(antiguoTexto, nuevoTexto);
+	public void sustituirCadenaDeCaracteres(Seccion actual, String nuevoTexto, String antiguoTexto) {
+		actual.getTexto().replaceAll(antiguoTexto, nuevoTexto);
 	}
 	
 	
-	public void eliminarCadenaDeCaracteres(String nuevoNombre, String nuevoTexto, int ini, int fin) {
+	public void eliminarCadenaDeCaracteres(Seccion actual, String nuevoTexto, int ini, int fin) {
 		StringBuffer stb=new StringBuffer();
-		Seccion str=this.buscarPorNombre(nuevoNombre);
-		stb.append(str.getTexto());
+		stb.append(actual.getTexto());
 		stb.delete(ini, fin);
-		str.setTexto(stb.toString()); 
+		actual.setTexto(stb.toString()); 
 		
 	}
 	
-	public void ponerAlReves(String nuevoNombre) {
+	public void ponerAlReves(Seccion actual) {
 		StringBuffer stb=new StringBuffer();
-		Seccion str=this.buscarPorNombre(nuevoNombre);
-		stb.append(this.buscarPorNombre(nuevoNombre).getTexto());
+		stb.append(actual.getTexto());
 		stb.reverse();
-		str.setTexto(stb.toString());
+		actual.setTexto(stb.toString());
+	}
+	
+	public void mostrarTodo() {
+		String delimitador="\n\n", prefijo="\t- ", sufijo="\\(^-^)/\\(^-^)/";
+		StringJoiner join=new StringJoiner(delimitador, prefijo, sufijo);
+		for (Seccion sc : lista) {
+			join.add(sc.getTexto());
+		}
+		System.out.println(join);
+	}
+	
+	public void agregarTextoFinal(String nuevoTexto, Seccion actual) {
+		StringBuffer stb=new StringBuffer();
+		stb.append(actual.getTexto()).append(nuevoTexto);
+		actual.setTexto(stb.toString());
+	}
+	
+	public void agregarTextoPosicion(String nuevoTexto, Seccion actual, int init) {
+		StringBuffer stb=new StringBuffer();
+		stb.append(actual.getTexto());
+		stb.insert(init, nuevoTexto);
+		actual.setTexto(stb.toString());
+	}
+	
+	public void eliminarTextoPosicion(Seccion actual, int init, int fin) {
+		StringBuffer stb=new StringBuffer();
+		stb.append(actual.getTexto());
+		stb.delete(init, fin);
+		actual.setTexto(stb.toString());
+	}
+	
+	public int mostrarIndice(String textoBuscado, Seccion actual){
+		StringBuffer stb=new StringBuffer();
+		stb.append(actual.getTexto());
+		return stb.indexOf(textoBuscado);
 	}
 	
 	
+
 }
