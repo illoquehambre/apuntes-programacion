@@ -26,13 +26,13 @@ public class Hoja {
 		return "Hoja [lista=" + lista + "]";
 	}
 	
-	public Seccion buscarPorNombre(String nuevoNombre) {
+	public Seccion buscarPorNombre(int id) {
 		Iterator <Seccion> it= lista.iterator();
 		boolean encontrado=false;
 		Seccion aux;
 		while(it.hasNext()&&!encontrado) {
 			aux=it.next();
-			if(aux.getNombre().equalsIgnoreCase(nuevoNombre)) {
+			if(aux.getId()==id) {
 				encontrado=true;
 				return aux;
 			}
@@ -48,7 +48,6 @@ public class Hoja {
 			array[i]= Character.toUpperCase(array[i]);
 				
 			}
-			
 		}
 	}
 	
@@ -57,7 +56,7 @@ public class Hoja {
 	}
 	
 	
-	public void eliminarCadenaDeCaracteres(Seccion actual, String nuevoTexto, int ini, int fin) {
+	public void eliminarCadenaDeCaracteres(Seccion actual, int ini, int fin) {
 		StringBuffer stb=new StringBuffer();
 		stb.append(actual.getTexto());
 		stb.delete(ini, fin);
@@ -73,7 +72,7 @@ public class Hoja {
 	}
 	
 	public void mostrarTodo() {
-		String delimitador="\n\n", prefijo="\t- ", sufijo="\\(^-^)/\\(^-^)/";
+		String delimitador="\n\n", prefijo="Documento:\n\n", sufijo="\n\n\\(^-^)/\\(^-^)/";
 		StringJoiner join=new StringJoiner(delimitador, prefijo, sufijo);
 		for (Seccion sc : lista) {
 			join.add(sc.getTexto());
@@ -94,12 +93,6 @@ public class Hoja {
 		actual.setTexto(stb.toString());
 	}
 	
-	public void eliminarTextoPosicion(Seccion actual, int init, int fin) {
-		StringBuffer stb=new StringBuffer();
-		stb.append(actual.getTexto());
-		stb.delete(init, fin);
-		actual.setTexto(stb.toString());
-	}
 	
 	public int mostrarIndice(String textoBuscado, Seccion actual){
 		StringBuffer stb=new StringBuffer();
@@ -107,6 +100,11 @@ public class Hoja {
 		return stb.indexOf(textoBuscado);
 	}
 	
-	
+	public void agregarPorDefecto(String str, int limit) {
+		for (int i = 0; i < limit; i++) {
+			lista.add(new Seccion(str, i+1));
+		}
+		
+	}
 
 }
