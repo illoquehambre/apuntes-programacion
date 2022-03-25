@@ -10,13 +10,14 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String buscar, nuevoTexto, porDefecto;
-		int opcion=0, opcion2=0, limit=7, id=0, ini=0, fin=0;
+		int opcion=0, opcion2=0, limit=7, buscarId=0, ini=0, fin=0, id=0;
 		Seccion actual;
 		List <Seccion> lista = new ArrayList<Seccion>();
 		Hoja hj = new Hoja(lista);
 		
 		porDefecto="\t- ";
 		hj.agregarPorDefecto(porDefecto, limit);
+		id=limit;
 		do {
 			System.out.println("Introduzca opcion");
 			opcion=Leer.datoInt();
@@ -31,9 +32,9 @@ public class Principal {
 				case 2:
 					System.out.println("Seleccionar la sección que quiera modificar");
 					System.out.println("Introduzca el nombre de la sección");
-					id=Leer.datoInt();
-					actual=hj.buscarPorNombre(id);
-					if(id>0 && id<hj.getLista().size()) {
+					buscarId=Leer.datoInt();
+					actual=hj.buscarPorNombre(buscarId);
+					if(buscarId>0 && buscarId<hj.getLista().size()) {
 						
 						do {
 							System.out.println("Introduzca opción");
@@ -63,8 +64,8 @@ public class Principal {
 									System.out.println("Introduce el nuevo texto a introducir");
 									nuevoTexto=Leer.dato();
 									System.out.println("introduzca la posición donde desea introducir su texto");
-									id=Leer.datoInt();
-									hj.agregarTextoPosicion(nuevoTexto, actual, id);
+									buscarId=Leer.datoInt();
+									hj.agregarTextoPosicion(nuevoTexto, actual, buscarId);
 									break;
 								case 5:
 									System.out.println("Eliminar texto en una posición indicada");//StringBuffer(delete)(S)
@@ -84,7 +85,7 @@ public class Principal {
 									buscar=Leer.dato();
 									System.out.println("Introduce el nuevo texto");
 									nuevoTexto=Leer.dato();
-									hj.sustituirCadenaDeCaracteres(actual, buscar, nuevoTexto);
+									hj.sustituirCadenaDeCaracteres(actual, nuevoTexto, buscar);
 									break;
 								case 8: 
 									System.out.println("Invertir caracteres"); //StringBuffer(reverse)(S)
@@ -102,6 +103,8 @@ public class Principal {
 					break;
 				case 3:
 					System.out.println("Crear nueva Sección");
+					hj.agregarSeccion(id, porDefecto);
+					id++;
 					break;
 				case 4:
 					System.out.println("Cargar Secciones predeterminadas");

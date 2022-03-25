@@ -106,5 +106,9 @@ public class Hoja {
 		}
 		
 	}
+	
+	public void agregarSeccion(int id, String str) {
+		lista.add(new Seccion(str, id));
+		}
 
 }
