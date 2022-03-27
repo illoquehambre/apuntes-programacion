@@ -1,23 +1,24 @@
 /*
  * La verdad que estoy un poco cansado de usar el Word para editar textos,
- * asi que como soy un pedazo de programador voy a crear mi propio editor de texto en Java.
+ * así que como soy un pedazo de programador voy a crear mi propio editor de texto en Java.
  * Este tendrá una clase Documento con una lista de distintas Secciones donde escribiremos, 
  * en estas secciones tendremos un atributo texto tipo String y un id para poder elegir bien en cual
  * queremos escribir.
  * Nuestro editor de texto deberá:
- * 1-Crear diversas secciones por defecto con un encabezado, pie de pagina para el documento y un par de saltos de linea entre secciones (StringJoiner)
- * 2-Elegir que seccion deseamos editar
- * 3-Crear nuevas Secciones
- * 4-Añadir texto tanto al final como en una posicion especifca
- * 5-Borrar texto
- * 6-Sustituir todas las cadenas de caracteres buscadas por otra especifica
- * 7-Cambiar a modo 'capitalize', la primera letra de cada palabra en mayuscula y el resto minuscula
- * 8-Poner todo el texto al reves
- * 9-Mostar el indice(posición) de una cadena buscada
- * 10-Mostrar tanto el documento completo como la seccion que en ese momento estemos editando
+ * 1-Crear diversas secciones por defecto con un encabezado, pie de página para el documento y un par de saltos de línea entre secciones (StringJoiner)
+ * 2-Elegir qué sección deseamos editar.
+ * 3-Crear nuevas secciones.
+ * 4-Añadir texto tanto al final como en una posición específica.
+ * 5-Borrar texto.
+ * 6-Sustituir todas las cadenas de caracteres buscadas por otra específica.
+ * 7-Cambiar a modo 'capitalize', la primera letra de cada palabra en mayúscula y el resto minúscula.
+ * 8-Poner todo el texto al revés.
+ * 9-Mostrar el índice(posición) de una cadena buscada.
+ * 10-Mostrar tanto el documento completo como la sección que en ese momento estemos editando.
  * 
- * -Los metodos para añadir texto pueden hacerse con String. Sin embargo, usaremos StringBuilder ya que es mas óptimo
+ * -Los métodos para añadir texto pueden hacerse con String. Sin embargo, usaremos StringBuilder ya que es más óptimo.
 */
+
 package proyecto;
 
 import java.util.ArrayList;
