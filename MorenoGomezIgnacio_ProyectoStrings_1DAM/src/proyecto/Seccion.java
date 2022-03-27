@@ -3,12 +3,12 @@ package proyecto;
 public class Seccion {
 	
 	private String texto;
-	private String nombre;
+	private int id;
 
-	public Seccion(String texto, String nombre) {
+	public Seccion(String texto, int id) {
 		super();
 		this.texto = texto;
-		this.setNombre(nombre);
+		this.id=id;
 	}
 
 	public String getTexto() {
@@ -19,18 +19,20 @@ public class Seccion {
 		this.texto = texto;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public int getId() {
+		return id;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	@Override
-	public String toString() {
-		return "Mensaje [texto=" + texto + "]";
+	public void setId(int id) {
+		this.id = id;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Seccion [id=" + id +", texto=" + texto+"]";
+	}
+
 	public void mostrarMensajeActual() {
 		System.out.println(texto);
 	}
