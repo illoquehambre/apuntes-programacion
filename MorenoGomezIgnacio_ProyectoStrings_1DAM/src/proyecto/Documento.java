@@ -26,50 +26,9 @@ public class Documento {
 		return "Hoja [lista=" + lista + "]";
 	}
 	
-	public Seccion buscarPorNombre(int id) {
-		Iterator <Seccion> it= lista.iterator();
-		boolean encontrado=false;
-		Seccion aux;
-		while(it.hasNext()&&!encontrado) {
-			aux=it.next();
-			if(aux.getId()==id) {
-				encontrado=true;
-				return aux;
-			}
-			
-		}
-	return null;
-	}
-	
-	public void convertirPrimeraLetraMayuscula(Seccion actual) {
-		char[] array=actual.getTexto().toCharArray();
-		for (int i = 0; i < array.length; i++) {
-			if(i==0 || array[i-1]==' ') {
-			array[i]= Character.toUpperCase(array[i]);
-				
-			}
-		}
-	}
-	
-	public void sustituirCadenaDeCaracteres(Seccion actual, String nuevoTexto, String antiguoTexto) {
-		actual.getTexto().replaceAll(antiguoTexto, nuevoTexto);
-	}
 	
 	
-	public void eliminarCadenaDeCaracteres(Seccion actual, int ini, int fin) {
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto());
-		stb.delete(ini, fin);
-		actual.setTexto(stb.toString()); 
-		
-	}
 	
-	public void ponerAlReves(Seccion actual) {
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto());
-		stb.reverse();
-		actual.setTexto(stb.toString());
-	}
 	
 	public void mostrarTodo() {
 		String delimitador="\n\n", prefijo="Documento:\n\n", sufijo="\n\n\\(^-^)/\\(^-^)/";
@@ -80,41 +39,16 @@ public class Documento {
 		System.out.println(join);
 	}
 	
-	public void agregarTextoFinal(String nuevoTexto, Seccion actual) {
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto()).append(nuevoTexto);
-		actual.setTexto(stb.toString());
-	}
 	
-	public void agregarTextoPosicion(String nuevoTexto, Seccion actual, int init) {
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto());
-		stb.insert(init, nuevoTexto);
-		actual.setTexto(stb.toString());
-	}
 	
-	public void eliminarTextoPosicion(Seccion actual, int init, int fin) {
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto());
-		stb.delete(init, fin);
-		actual.setTexto(stb.toString());
-	}
 	
-	public int mostrarIndice(String textoBuscado, Seccion actual){
-		StringBuilder stb=new StringBuilder();
-		stb.append(actual.getTexto());
-		return stb.indexOf(textoBuscado);
-	}
 	
-	public void agregarPorDefecto(String str, int limit) {
-		for (int i = 0; i < limit; i++) {
-			lista.add(new Seccion(str, i+1));
-		}
-		
-	}
 	
-	public void agregarSeccion(int id, String str) {
-		lista.add(new Seccion(str, id));
-		}
+	
+	
+	
+	
+	
+	
 
 }

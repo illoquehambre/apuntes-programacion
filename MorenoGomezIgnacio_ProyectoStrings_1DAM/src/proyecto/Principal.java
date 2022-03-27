@@ -1,3 +1,23 @@
+/*
+ * La verdad que estoy un poco cansado de usar el Word para editar textos,
+ * asi que como soy un pedazo de programador voy a crear mi propio editor de texto en Java.
+ * Este tendrá una clase Documento con una lista de distintas Secciones donde escribiremos, 
+ * en estas secciones tendremos un atributo texto tipo String y un id para poder elegir bien en cual
+ * queremos escribir.
+ * Nuestro editor de texto deberá:
+ * 1-Crear diversas secciones por defecto con un encabezado, pie de pagina para el documento y un par de saltos de linea entre secciones (StringJoiner)
+ * 2-Elegir que seccion deseamos editar
+ * 3-Crear nuevas Secciones
+ * 4-Añadir texto tanto al final como en una posicion especifca
+ * 5-Borrar texto
+ * 6-Sustituir todas las cadenas de caracteres buscadas por otra especifica
+ * 7-Cambiar a modo 'capitalize', la primera letra de cada palabra en mayuscula y el resto minuscula
+ * 8-Poner todo el texto al reves
+ * 9-Mostar el indice(posición) de una cadena buscada
+ * 10-Mostrar tanto el documento completo como la seccion que en ese momento estemos editando
+ * 
+ * -Los metodos para añadir texto pueden hacerse con String. Sin embargo, usaremos StringBuilder ya que es mas óptimo
+*/
 package proyecto;
 
 import java.util.ArrayList;
@@ -6,6 +26,7 @@ import java.util.List;
 import utilidades.Leer;
 
 public class Principal {
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,84 +34,106 @@ public class Principal {
 		int opcion=0, opcion2=0, limit=7, buscarId=0, ini=0, fin=0, id=0;
 		Seccion actual;
 		List <Seccion> lista = new ArrayList<Seccion>();
-		Documento hj = new Documento(lista);
+		Documento doc = new Documento(lista);
+		CrudDocumento crudDoc=new CrudDocumento(doc);
 		
 		porDefecto="\t- ";
-		hj.agregarPorDefecto(porDefecto, limit);
+		crudDoc.agregarPorDefecto(porDefecto, limit);
 		id=limit;
 		do {
-			System.out.println("Introduzca opcion");
+			System.out.println("\n\n\tPULSE\t\tPARA\n");
+			System.out.println("\t0\t\tSALIR");
+			System.out.println("\t1\t\tMostrar documento");//StringJoiner(add)(S)
+			System.out.println("\t2\t\tSeleccionar la sección que quiera modificar");
+			System.out.println("\t3\t\tCrear nueva Sección");
 			opcion=Leer.datoInt();
 			switch(opcion) {
 				case 0:
 					System.out.println("Fin del programa");
 					break;
 				case 1:
-					System.out.println("Mostrar documento");//StringJoiner(add)(S)
-					hj.mostrarTodo();
+					
+					doc.mostrarTodo();
 					break;
 				case 2:
-					System.out.println("Seleccionar la sección que quiera modificar");
-					System.out.println("Introduzca el nombre de la sección");
+					
+					System.out.println("Introduzca el id de la sección");
 					buscarId=Leer.datoInt();
-					actual=hj.buscarPorNombre(buscarId);
-					if(buscarId>0 && buscarId<hj.getLista().size()) {
+					actual=crudDoc.buscarPorNombre(buscarId);
+					if(buscarId>0 && buscarId<doc.getLista().size()) {
 						
 						do {
-							System.out.println("Introduzca opción");
+							System.out.println("\n\n\tPULSE\t\tPARA\n");
+							System.out.println("\t0\t\tVolver a la pantalla anterior");
+							System.out.println("\t1\t\tMostrar Sección actual");//(S)
+							System.out.println("\t2\t\tAñadir más texto al final");//StringBuilder (Append)(S)
+							System.out.println("\t3\t\tMostrar índice de una cadena buscada");//StringBuilder(indexOf)	(S)	
+							System.out.println("\t4\t\tAñadir texto en una posición indicada");//StringBuilder(insert) (S)
+							System.out.println("\t5\t\tEliminar texto en una posición indicada");//StringBuilder(delete)(S)
+							System.out.println("\t6\t\tHacer mayúscula la primera letra de cada palabra");//String(toCharArray, ToUpperCase) (S)
+							System.out.println("\t7\t\tReemplazar todas las cadenas de caracteres encontradas por otra");//String(Replace All) (S)
+							System.out.println("\t8\t\tInvertir caracteres"); //StringBuilder(reverse)(S)
 							opcion2=Leer.datoInt();
 							switch(opcion2) {
 								case 0:
 									break;
 								case 1:	
-									System.out.println("Mostrar Sección actual");//(S)
+									
 									actual.mostrarMensajeActual();
 									break;
 								case 2:	
-									System.out.println("Añadir más texto al final");//StringBuffer (Append)(S)
+									
 									System.out.println("Introduzca que una cadena de caracteres para añadir");
 									nuevoTexto=Leer.dato();
-									hj.agregarTextoFinal(nuevoTexto, actual);
-									
+									crudDoc.agregarTextoFinal(nuevoTexto, actual);
+									actual.mostrarMensajeActual();
 									break;
 								case 3:
-									System.out.println("Mostrar índice de una cadena buscada");//StringBuffer(indexOf)	(S)	
+									
 									System.out.println("Introduzca la cadena a buscar");
 									buscar=Leer.dato();
-									System.out.println(hj.mostrarIndice(buscar, actual))									;
+									System.out.println(crudDoc.mostrarIndice(buscar, actual));
+									actual.mostrarMensajeActual();
 									break;
 								case 4:	
-									System.out.println("Añadir texto en una posición indicada");//StringBuffer(insert) (S)
+									
 									System.out.println("Introduce el nuevo texto a introducir");
 									nuevoTexto=Leer.dato();
 									System.out.println("introduzca la posición donde desea introducir su texto");
 									buscarId=Leer.datoInt();
-									hj.agregarTextoPosicion(nuevoTexto, actual, buscarId);
+									crudDoc.agregarTextoPosicion(nuevoTexto, actual, buscarId);
+									actual.mostrarMensajeActual();
 									break;
 								case 5:
-									System.out.println("Eliminar texto en una posición indicada");//StringBuffer(delete)(S)
+									
 									System.out.println("Introduce la posición de inicio");
 									ini=Leer.datoInt();
 									System.out.println("Introduce la posición de final");
 									fin=Leer.datoInt();
-									hj.eliminarCadenaDeCaracteres(actual, ini, fin);
+									crudDoc.eliminarTextoPosicion(actual, ini, fin);
+									actual.mostrarMensajeActual();
 									break;
 								case 6:
-									System.out.println("Hacer mayúscula la primera letra de cada palabra");//String(toCharArray, ToUpperCase) (S)
-									hj.convertirPrimeraLetraMayuscula(actual);
+									
+									crudDoc.convertirPrimeraLetraMayuscula(actual);
+									actual.mostrarMensajeActual();
 									break;
 								case 7:
-									System.out.println("Reemplazar todas las cadenas de caracteres encontradas por otra");//String(Replace All) (S)
+									
 									System.out.println("Introduzca el texto que desea sustituir");
 									buscar=Leer.dato();
 									System.out.println("Introduce el nuevo texto");
 									nuevoTexto=Leer.dato();
-									hj.sustituirCadenaDeCaracteres(actual, nuevoTexto, buscar);
+									crudDoc.sustituirCadenaDeCaracteres(actual, nuevoTexto, buscar);
+									actual.mostrarMensajeActual();
 									break;
+									
 								case 8: 
-									System.out.println("Invertir caracteres"); //StringBuffer(reverse)(S)
-									hj.ponerAlReves(actual);
+									
+									crudDoc.ponerAlReves(actual);
+									actual.mostrarMensajeActual();
 									break;
+									
 								default:
 									System.out.println("Opcion no disponible, intentelo de nuevo");
 									break;
@@ -102,15 +145,11 @@ public class Principal {
 					
 					break;
 				case 3:
-					System.out.println("Crear nueva Sección");
-					hj.agregarSeccion(id, porDefecto);
+					
+					crudDoc.agregarSeccion(id, porDefecto);
 					id++;
 					break;
-				case 4:
-					System.out.println("Cargar Secciones predeterminadas");
-					break;
-				case 5:
-					break;
+				
 				default:
 					System.out.println("Opcion no disponible, intentelo de nuevo");
 					break;
