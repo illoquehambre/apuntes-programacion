@@ -24,7 +24,7 @@ public class CrudBarco {
 		this.br = br;
 	}
 
-	public void modifcarColor(String matricula, String color, Barco br) {
+	public void modifcarColor(String matricula, String color) {
 		Iterator<Coche> it = br.getListado().iterator();
 		boolean encontrado=false;
 		Coche aux;

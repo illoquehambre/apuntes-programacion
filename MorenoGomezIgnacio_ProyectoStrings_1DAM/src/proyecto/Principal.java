@@ -13,7 +13,7 @@ public class Principal {
 		int opcion=0, opcion2=0;
 		Seccion actual;
 		List <Seccion> lista = new ArrayList<Seccion>();
-		Hoja hj = new Hoja(lista);
+		Documento hj = new Documento(lista);
 		
 		do {
 			System.out.println("Introduzca opcion");
@@ -42,20 +42,20 @@ public class Principal {
 								actual.mostrarMensajeActual();
 								break;
 							case 2:	
-								System.out.println("Añadir más texto al final");//StringBuffer (Append)(S)
+								System.out.println("Añadir más texto al final");//StringBuilder (Append)(S)
 								System.out.println("Introduzca que una cadena de caracteres para añadir");
 								nuevoTexto=Leer.dato();
 								hj.agregarTextoFinal(nuevoTexto, actual);
 								
 								break;
 							case 3:
-								System.out.println("Mostrar índice de una cadena buscada");//StringBuffer(indexOf)	(S)							
+								System.out.println("Mostrar índice de una cadena buscada");//StringBuilder(indexOf)	(S)							
 								break;
 							case 4:	
-								System.out.println("Añadir texto en una posición indicada");//StringBuffer(insert) (S)
+								System.out.println("Añadir texto en una posición indicada");//StringBuilder(insert) (S)
 								break;
 							case 5:
-								System.out.println("Eliminar texto en una posición indicada");//StringBuffer(delete)(S)
+								System.out.println("Eliminar texto en una posición indicada");//StringBuilder(delete)(S)
 								break;
 							case 6:
 								System.out.println("Hacer mayúscula la primera letra de cada palabra");//String(toCharArray, ToUpperCase) (S)
@@ -70,7 +70,7 @@ public class Principal {
 								hj.sustituirCadenaDeCaracteres(actual, buscar, nuevoTexto);
 								break;
 							case 8: 
-								System.out.println("Invertir caracteres"); //StringBuffer(reverse)(S)
+								System.out.println("Invertir caracteres"); //StringBuilder(reverse)(S)
 								hj.ponerAlReves(actual);
 								break;
 							default:

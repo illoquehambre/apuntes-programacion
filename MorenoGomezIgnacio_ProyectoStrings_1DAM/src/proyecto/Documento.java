@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.StringJoiner;
 
 
-public class Hoja {
+public class Documento {
 	private List <Seccion> lista;
 
-	public Hoja(List<Seccion> lista) {
+	public Documento(List<Seccion> lista) {
 		super();
 		this.lista = lista;
 	}
@@ -58,7 +58,7 @@ public class Hoja {
 	
 	
 	public void eliminarCadenaDeCaracteres(Seccion actual, String nuevoTexto, int ini, int fin) {
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto());
 		stb.delete(ini, fin);
 		actual.setTexto(stb.toString()); 
@@ -66,7 +66,7 @@ public class Hoja {
 	}
 	
 	public void ponerAlReves(Seccion actual) {
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto());
 		stb.reverse();
 		actual.setTexto(stb.toString());
@@ -82,27 +82,27 @@ public class Hoja {
 	}
 	
 	public void agregarTextoFinal(String nuevoTexto, Seccion actual) {
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto()).append(nuevoTexto);
 		actual.setTexto(stb.toString());
 	}
 	
 	public void agregarTextoPosicion(String nuevoTexto, Seccion actual, int init) {
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto());
 		stb.insert(init, nuevoTexto);
 		actual.setTexto(stb.toString());
 	}
 	
 	public void eliminarTextoPosicion(Seccion actual, int init, int fin) {
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto());
 		stb.delete(init, fin);
 		actual.setTexto(stb.toString());
 	}
 	
 	public int mostrarIndice(String textoBuscado, Seccion actual){
-		StringBuffer stb=new StringBuffer();
+		StringBuilder stb=new StringBuilder();
 		stb.append(actual.getTexto());
 		return stb.indexOf(textoBuscado);
 	}
