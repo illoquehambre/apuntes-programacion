@@ -50,7 +50,7 @@ public class Principal {
 				matricula=Leer.dato();
 				System.out.println("Introduzca el nuevo color");
 				color=Leer.dato();
-				cr.modifcarColor(matricula, color, br);
+				cr.modifcarColor(matricula, color);
 				cr.getBr().mostrarTodo();
 				break;
 				
