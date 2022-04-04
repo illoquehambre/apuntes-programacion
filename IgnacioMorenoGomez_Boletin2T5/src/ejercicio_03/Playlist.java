@@ -65,4 +65,17 @@ public class Playlist {
 				.collect(Collectors.toList()).size();
 	}
 	
+	public List<Cancion> mostrarMasDuracion(int segundos) {
+		return  lista.stream()
+				.filter(cancion -> segundos<(cancion.getDuracion().toSeconds()))
+				.collect(Collectors.toList());
+	}
+	
+	public List<Cancion> mostrarMenosDuracion(int segundos) {
+		return  lista.stream()
+				.filter(cancion -> segundos>(cancion.getDuracion().toSeconds()))
+				.collect(Collectors.toList());
+	}
+	
+	
 }	

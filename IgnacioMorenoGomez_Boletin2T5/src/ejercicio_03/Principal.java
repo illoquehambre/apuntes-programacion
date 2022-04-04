@@ -13,7 +13,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int opcion=0, nReproducciones=0;
+		int opcion=0, nReproducciones=0, segundos=0;
 		String busqueda;
 		List <Cancion> lista =new ArrayList <Cancion>();
 		Playlist playlist=new Playlist(lista);
@@ -47,28 +47,41 @@ public class Principal {
 				break;
 			case 2:
 				busqueda=Leer.dato();
-				playlist.buscarPorNombre(busqueda);
+				System.out.println(playlist.buscarPorNombre(busqueda));
+				
 				break;
 			case 3:
 				busqueda=Leer.dato();
-				playlist.buscarPorAutor(busqueda);
+				System.out.println(playlist.buscarPorAutor(busqueda));
+				
 				break;
 				
 			case 4:
 				busqueda=Leer.dato();
-				playlist.buscarPorAlbum(busqueda);
+				System.out.println(playlist.buscarPorAlbum(busqueda));
+				
 				break;
 			case 5:
 				busqueda=Leer.dato();
-				playlist.buscarPorGenero(busqueda);
+				System.out.println(playlist.buscarPorGenero(busqueda));
 				break;
 			case 6:
 				nReproducciones=Leer.datoInt();
-				playlist.buscarPorMasReproducciones(nReproducciones);
+				System.out.println(playlist.buscarPorMasReproducciones(nReproducciones));
 				break;
 			case 7:
 				busqueda=Leer.dato();
-				playlist.contarInterpretesDeCancion(busqueda);
+				System.out.println(playlist.contarInterpretesDeCancion(busqueda));
+				break;
+				
+			case 8:
+				segundos=Leer.datoInt();
+				System.out.println(playlist.mostrarMasDuracion(segundos));
+				break;
+				
+			case 9:
+				segundos=Leer.datoInt();
+				System.out.println(playlist.mostrarMasDuracion(segundos));
 				break;
 			default:
 				System.out.println("Te has equivocao de número master");
