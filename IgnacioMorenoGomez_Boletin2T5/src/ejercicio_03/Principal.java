@@ -20,14 +20,15 @@ public class Principal {
 		
 		
 		playlist.getLista().add(new Cancion("Limonero","Gata Catana", "Banzai", "Rap", Duration.ofMinutes(2).plusSeconds(34), 215147, LocalDate.of(2017, 03, 24)));
-		playlist.getLista().add(new Cancion("Cantando","Violadores del Verso", "Pura droga sin cortar", "Rap", Duration.ofMinutes(2).plusSeconds(34), 75524, LocalDate.of(2012, 03, 24)));
+		playlist.getLista().add(new Cancion("Cantando","Violadores del Verso", "Pura droga sin cortar", "Rap", Duration.ofMinutes(4).plusSeconds(34), 75524, LocalDate.of(2012, 03, 24)));
 		playlist.getLista().add(new Cancion("Sin miedo a vivir","SFDK", "Sin miedo a vivir", "Rap", Duration.ofMinutes(2).plusSeconds(34), 873543, LocalDate.of(2017, 03, 24)));
-		playlist.getLista().add(new Cancion("La Almagama","SFDK", "Sin miedo a vivir", "Rap", Duration.ofMinutes(2).plusSeconds(34), 45120, LocalDate.of(2017, 03, 24)));
+		playlist.getLista().add(new Cancion("La Amalgama","SFDK", "Redención", "Rap", Duration.ofMinutes(2).plusSeconds(34), 45120, LocalDate.of(2017, 03, 24)));
 		playlist.getLista().add(new Cancion("Rhymes like Dhymes","Dooms Day", "Books Of War", "Rap", Duration.ofMinutes(2).plusSeconds(34), 42533, LocalDate.of(2015, 03, 24)));
 		playlist.getLista().add(new Cancion("And the snakes start to sing","Bring Me The Horizon", null, "Heavy-Metal", Duration.ofMinutes(2).plusSeconds(34), 215147, LocalDate.of(2007, 03, 24)));
 		playlist.getLista().add(new Cancion("Obsceno","Kaze", null, "Rap", Duration.ofMinutes(2).plusSeconds(34), 21517847, LocalDate.of(2017, 07, 29)));
-		playlist.getLista().add(new Cancion("Jungle","Tash Sultana", "Jungle", "Rock", Duration.ofMinutes(2).plusSeconds(34), 3434534, LocalDate.of(2017, 05, 24)));
-		playlist.getLista().add(new Cancion("Adults are talking","The Strokes", "The new Abnormal", "Indie-Rock",Duration.ofMinutes(2).plusSeconds(34), 215147, LocalDate.of(2021, 03, 24)));
+		playlist.getLista().add(new Cancion("Jungle","Tash Sultana", "Jungle", "Rock", Duration.ofMinutes(3).plusSeconds(34), 3434534, LocalDate.of(2017, 05, 24)));
+		playlist.getLista().add(new Cancion("Adults are talking","The Strokes", "The new Abnormal", "Indie-Rock",Duration.ofMinutes(1).plusSeconds(34), 215147, LocalDate.of(2021, 03, 24)));
+		playlist.getLista().add(new Cancion("Cantando","Kase O", null, "Rap", Duration.ofMinutes(4).plusSeconds(34), 44277, LocalDate.of(2012, 03, 24)));
 		
 		
 		
@@ -81,7 +82,7 @@ public class Principal {
 				
 			case 9:
 				segundos=Leer.datoInt();
-				System.out.println(playlist.mostrarMasDuracion(segundos));
+				System.out.println(playlist.mostrarMenosDuracion(segundos));
 				break;
 			default:
 				System.out.println("Te has equivocao de número master");
