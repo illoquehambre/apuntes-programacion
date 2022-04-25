@@ -1,4 +1,4 @@
-package ejercicio;
+ package ejercicio;
 
 import java.util.Comparator;
 
